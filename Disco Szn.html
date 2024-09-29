@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rhythm Resilience - Studio 54 Disco</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Raleway', sans-serif;
+            background-color: #ffe6f2;
+            color: #333333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #ff66b2;
+            padding: 20px;
+            text-align: center;
+        }
+        header h1 {
+            color: #ffffff;
+            font-size: 3em;
+        }
+        nav {
+            text-align: center;
+            padding: 15px;
+            background-color: #ff4d88;
+        }
+        nav a {
+            color: #ffffff;
+            margin: 0 20px;
+            text-decoration: none;
+            font-size: 1.3em;
+            font-weight: bold;
+        }
+        section {
+            padding: 50px 20px;
+            text-align: center;
+        }
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #ffb3d9;
+            padding: 50px 0;
+            min-height: 400px;
+        }
+        .hero img {
+            width: 50%;
+            border-radius: 10px;
+        }
+        .hero-text {
+            flex: 1;
+            padding: 20px;
+            text-align: left;
+        }
+        .hero-text h2 {
+            font-size: 3em;
+            color: #ff4d88;
+        }
+        .vote-section {
+            margin: 30px auto;
+            max-width: 600px;
+        }
+        .vote-section h2 {
+            color: #ff4d88;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        .vote-section form {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin: 0 auto;
+        }
+        .vote-section input[type="radio"] {
+            margin-right: 10px;
+        }
+        .vote-section label {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+        .vote-section button {
+            background-color: #ff4d88;
+            color: white;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            border: none;
+            cursor: pointer;
+        }
+        footer {
+            background-color: #ff4d88;
+            padding: 20px;
+            text-align: center;
+            color: #ffffff;
+        }
+        footer a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        /* Popup Disco Ball Styling */
+        #popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 30px;
+            border: 2px solid #333;
+            z-index: 1000;
+            box-shadow: 0px 4px 10px rgba(0,0,0,0.5);
+            text-align: center;
+        }
+        #popup img {
+            width: 200px;
+            margin-bottom: 20px;
+        }
+        #popup h2 {
+            font-size: 2em;
+            color: #ff4d88;
+            margin-bottom: 20px;
+        }
+        #popup label, #popup input {
+            display: block;
+            margin: 10px 0;
+            font-size: 1.2em;
+        }
+        #popup button {
+            background-color: #ff4d88;
+            color: white;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Rhythm Resilience</h1>
+    </header>
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#project">Project</a>
+        <a href="#vote">Vote</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="hero">
+        <img src="/mnt/data/f4d70cc8dc56a8712786b4d35fde6a32.jpg" alt="Studio 54 interior">
+        <div class="hero-text">
+            <h2>Welcome to Rhythm Resilience</h2>
+            <p>Relive the iconic days of Studio 54 with a modern twist. Experience immersive dance parties, get real-time feedback, and enjoy the best of disco and VR technology.</p>
+        </div>
+    </div>
+
+    <section id="about">
+        <h2>About Rhythm Resilience</h2>
+        <p>“Rhythm Resilience” brings back the magic of the legendary Studio 54. Combining dance with immersive virtual reality, users can step into a remastered 1977 New York City environment. The VR experience allows dancers to practice, perform, and engage with cutting-edge technology, improving their moves through Azure Machine Learning analysis.</p>
+    </section>
+
+    <section id="project">
+        <h2>Our Project</h2>
+        <p>Our virtual reality platform allows users to engage in real-time dance experiences, powered by Azure Machine Learning for performance feedback. Whether you’re a beginner or an expert dancer, we have the tools to help you thrive.</p>
+    </section>
+
+    <section id="vote" class="vote-section">
+        <h2>Vote for Your Favorite Disco Song</h2>
+        <form id="voteForm">
+            <label><input type="radio" name="song" value="I Will Survive"> I Will Survive - Gloria Gaynor</label>
+            <label><input type="radio" name="song" value="Stayin' Alive"> Stayin' Alive - Bee Gees</label>
+            <label><input type="radio" name="song" value="Dancing Queen"> Dancing Queen - ABBA</label>
+            <label><input type="radio" name="song" value="Le Freak"> Le Freak - Chic</label>
+            <label><input type="radio" name="song" value="Boogie Wonderland"> Boogie Wonderland - Earth, Wind & Fire</label>
+            <button type="button" onclick="openPopup()">Submit Vote</button>
+        </form>
+    </section>
+
+    <!-- Disco Ball Popup -->
+    <div id="popup">
+        <img src="https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif" alt="Disco Ball">
+        <h2>Enter Your Information</h2>
+        <form id="popupForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <button type="button" onclick="submitVote()">Submit</button>
+        </form>
+    </div>
+
+    <footer>
+        <p>© 2024 Rhythm Resilience - Celebrating the Legacy of Studio 54</p>
+    </footer>
+
+    <script>
+        // Function to open the popup
+        function openPopup() {
+            const selectedSong = document.querySelector('input[name="song"]:checked');
+            if (!selectedSong) {
+                alert("Please select a song to vote.");
+                return;
+            }
+            document.getElementById('popup').style.display = 'block';
+        }
+
+        // Function to submit vote and close popup
+        function submitVote() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            if (name && email) {
+                alert(`Thank you for voting, ${name}! Your favorite song is submitted.`);
+                document.getElementById('popup').style.display = 'none';
+                // Add logic to process the vote (e.g., send to a server)
+            } else {
+                alert('Please fill in your name and email.');
+            }
+        }
+    </script>
+
+</body>
+</html>
+
+
+
+
+
+
